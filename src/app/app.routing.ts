@@ -1,4 +1,4 @@
-import { ModuleWithProviders } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { UnderConstructionComponent } from '@shared/components/under-construction/under-construction.component';
@@ -11,8 +11,12 @@ const routes: Routes = [
   { path: 'underconstruction', component: UnderConstructionComponent },
   { path: 'wishlist', loadChildren: () => import('./modules/wishlist/wishlist.module').then(m => m.WishlistModule) },
   { path: 'about', loadChildren: () => import('./modules/about/about.module').then(m => m.AboutModule) },
-  { path: 'code', loadChildren: () => import('./modules/code/code.module').then(m => m.CodeModule)},
-  { path: '**', component: ErrorNotFoundComponent},
+  { path: 'code', loadChildren: () => import('./modules/code/code.module').then(m => m.CodeModule) },
+  { path: '**', component: ErrorNotFoundComponent },
 ];
 
-export const routing: ModuleWithProviders = RouterModule.forRoot(routes);
+@NgModule({
+  imports: [RouterModule.forRoot(routes, { scrollPositionRestoration: 'enabled' })],
+  exports: [RouterModule]
+})
+export class AppRoutingModule { }
