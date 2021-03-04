@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 import { WishlistComponent } from './wishlist.component';
@@ -9,7 +9,7 @@ describe('WishlistComponent', () => {
   let component: WishlistComponent;
   let fixture: ComponentFixture<WishlistComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       imports: [SharedModule, RouterTestingModule, NoopAnimationsModule],
       declarations: [WishlistComponent],
@@ -27,7 +27,7 @@ describe('WishlistComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it(`should have as title 'Admiralfeb\'s Wishlist'`, async(() => {
+  it(`should have as title 'Admiralfeb\'s Wishlist'`, waitForAsync(() => {
     const app = fixture.debugElement.componentInstance;
     expect(app.title).toEqual('Admiralfeb\'s Wishlist');
   }));

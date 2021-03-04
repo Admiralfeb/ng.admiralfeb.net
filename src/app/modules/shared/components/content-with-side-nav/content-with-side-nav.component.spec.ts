@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { ContentwithSideNavComponent } from './content-with-side-nav.component';
 import { MaterialModule } from '../../material/material.module';
@@ -10,7 +10,7 @@ describe('ContentwithSideNavComponent', () => {
   let component: ContentwithSideNavComponent;
   let fixture: ComponentFixture<ContentwithSideNavComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       imports: [MaterialModule, RouterTestingModule, NoopAnimationsModule],
       declarations: [ ContentwithSideNavComponent ]

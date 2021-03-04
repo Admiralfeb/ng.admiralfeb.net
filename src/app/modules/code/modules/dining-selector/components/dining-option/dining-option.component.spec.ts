@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { SharedModule } from '@shared/shared-module.module';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
@@ -9,7 +9,7 @@ describe('DiningOptionComponent', () => {
   let component: DiningOptionComponent;
   let fixture: ComponentFixture<DiningOptionComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       imports: [
         SharedModule,

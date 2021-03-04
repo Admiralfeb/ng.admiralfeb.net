@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { CountdownComponent } from './countdown.component';
 
@@ -7,7 +7,7 @@ describe('CountdownComponent', () => {
   let fixture: ComponentFixture<CountdownComponent>;
   const date = 'October 7 2018';
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [CountdownComponent]
     })

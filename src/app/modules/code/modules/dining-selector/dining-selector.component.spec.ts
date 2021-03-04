@@ -1,4 +1,4 @@
-import { TestBed, async } from '@angular/core/testing';
+import { TestBed, waitForAsync } from '@angular/core/testing';
 
 import { SharedModule } from '@shared/shared-module.module';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
@@ -8,7 +8,7 @@ import { DiningOptionComponent } from './components/dining-option/dining-option.
 import { MessagesComponent } from './components/messages/messages.component';
 
 describe('DiningSelectorComponent', () => {
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       imports: [
         SharedModule,
@@ -21,17 +21,17 @@ describe('DiningSelectorComponent', () => {
       ],
     }).compileComponents();
   }));
-  it('should create the app', async(() => {
+  it('should create the app', waitForAsync(() => {
     const fixture = TestBed.createComponent(DiningSelectorComponent);
     const app = fixture.debugElement.componentInstance;
     expect(app).toBeTruthy();
   }));
-  it(`should have as title 'Dining Selector'`, async(() => {
+  it(`should have as title 'Dining Selector'`, waitForAsync(() => {
     const fixture = TestBed.createComponent(DiningSelectorComponent);
     const app = fixture.debugElement.componentInstance;
     expect(app.title).toEqual('Dining Selector');
   }));
-  it('should render title in a h3 tag', async(() => {
+  it('should render title in a h3 tag', waitForAsync(() => {
     const fixture = TestBed.createComponent(DiningSelectorComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;

@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { WishlistMainComponent } from './main.component';
 import { SharedModule } from '@shared/shared-module.module';
@@ -7,7 +7,7 @@ describe('WishlistMainComponent', () => {
   let component: WishlistMainComponent;
   let fixture: ComponentFixture<WishlistMainComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [WishlistMainComponent],
       imports: [SharedModule]

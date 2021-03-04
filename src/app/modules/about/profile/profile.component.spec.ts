@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { ProfileComponent } from './profile.component';
 import { ProfileService } from './profile.service';
@@ -10,7 +10,7 @@ describe('ProfileComponent', () => {
   let fixture: ComponentFixture<ProfileComponent>;
   // let entries: Welcome;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     const spy = jasmine.createSpyObj('ProfileService', ['getProfileJson', 'subscribe']);
     TestBed.configureTestingModule({
       imports: [HttpClientTestingModule],
